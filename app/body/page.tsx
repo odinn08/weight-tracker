@@ -10,6 +10,7 @@ import {
   saveStoredProfile,
   getStoredWeightHistory,
   logBodyweight,
+  deleteBodyweight,
   getStoredMeasurements,
   logMeasurement,
   exportDataAsJSON,
@@ -76,6 +77,11 @@ export default function BodyPage() {
     setWeightHistory(getStoredWeightHistory());
   };
 
+  const handleDeleteWeight = (date: string) => {
+    deleteBodyweight(date);
+    setWeightHistory(getStoredWeightHistory());
+  };
+
   const handleSaveProfile = (updated: Profile) => {
     setProfile(updated);
     saveStoredProfile(updated);
@@ -87,7 +93,7 @@ export default function BodyPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `iron_ledger_data_${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `kg_tracker_data_${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -245,6 +251,7 @@ export default function BodyPage() {
         initialWeight={latestWeight > 0 ? latestWeight : 80.0}
         onClose={() => setIsLogWeightOpen(false)}
         onSave={handleSaveWeight}
+        onDelete={latestWeight > 0 ? handleDeleteWeight : undefined}
       />
 
       <EditProfileModal

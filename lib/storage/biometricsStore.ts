@@ -75,6 +75,14 @@ export function logBodyweight(date: string, weightKg: number): BodyweightEntry {
   return entryToReturn;
 }
 
+export function deleteBodyweight(date: string): void {
+  const history = getStoredWeightHistory();
+  const updated = history.filter((entry) => entry.date !== date);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(BIOMETRICS_KEYS.WEIGHT, JSON.stringify(updated));
+  }
+}
+
 export function getStoredMeasurements(): MeasurementEntry[] {
   if (typeof window === 'undefined') return [];
   const raw = localStorage.getItem(BIOMETRICS_KEYS.MEASUREMENTS);

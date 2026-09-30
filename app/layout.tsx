@@ -3,7 +3,7 @@ import './globals.css';
 import { TabBar } from '@/components/Navigation/TabBar';
 
 export const metadata: Metadata = {
-  title: 'IRON LEDGER — Gym Weight Tracker',
+  title: 'KG TRACKER — Gym Weight Tracker',
   description: 'Reference and progressive overload tool for lifters',
   manifest: '/manifest.json',
   icons: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'IRON LEDGER',
+    title: 'KG TRACKER',
   },
 };
 

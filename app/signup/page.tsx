@@ -49,7 +49,7 @@ export default function SignUpPage() {
           <div className="inline-flex items-center justify-center gap-2">
             <span className="w-3 h-3 bg-[#C8471B] inline-block" />
             <h1 className="font-condensed text-3xl font-bold tracking-widest text-[#E8E6E1]">
-              IRON LEDGER
+              KG TRACKER
             </h1>
           </div>
           <p className="text-xs text-[#8A8880] tracking-wider uppercase font-mono-tabular">

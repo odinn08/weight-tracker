@@ -52,8 +52,9 @@ export function EditProfileModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 backdrop-none p-0">
-      <div className="w-full max-w-[480px] bg-[#131312] border-t border-[#33332E] rounded-t-[12px] p-5 space-y-5 animate-in slide-in-from-bottom duration-200">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-0">
+      <div className="w-full max-w-[480px] bg-[#131312] border-t border-[#33332E] rounded-t-[12px] overflow-y-auto max-h-[90svh] animate-in slide-in-from-bottom duration-200">
+      <div className="p-5 space-y-5 pb-8">
         <div className="flex items-center justify-between border-b border-[#232320] pb-3">
           <h3 className="font-condensed text-lg font-bold text-[#E8E6E1]">
             EDIT LIFTER PROFILE
@@ -158,6 +159,7 @@ export function EditProfileModal({
             <span>SAVE PROFILE</span>
           </button>
         </form>
+      </div>
       </div>
     </div>
   );
